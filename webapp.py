@@ -12,7 +12,7 @@ scheduler.add_job(job_function, 'interval', minutes=5)
 scheduler.start()'''
 
 def job_function():
-    print("Hello World!")
+    return Markup("<p>Hello World!</p>")
 
 @app.route('/')
 def welcome():
