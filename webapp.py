@@ -7,12 +7,9 @@ import time
  
 app = Flask(__name__)
 
-'''scheduler = BackgroundScheduler({'apscheduler.timezone':'America/Los_Angeles'})
-scheduler.add_job(job_function, 'interval', minutes=5)
-scheduler.start()'''
-
 def job_function():
-    return Markup("<p>Hello World!</p>")
+    return print("Hello World!")
+    #return Markup("<p>Hello World!</p>")
 
 @app.route('/')
 def welcome():
