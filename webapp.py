@@ -16,7 +16,7 @@ def welcome():
     scheduler = BackgroundScheduler({'apscheduler.timezone':'America/Los_Angeles'})
     scheduler.add_job(job_function, 'interval', seconds=5)
     scheduler.start()
-    return render_template('home.html', paragraph=job_function())
+    return render_template('home.html', paragraph=scheduler)
   
 if __name__=="__main__":
     app.run(debug=False)
