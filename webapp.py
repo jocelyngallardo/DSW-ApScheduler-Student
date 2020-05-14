@@ -8,7 +8,7 @@ import time
 app = Flask(__name__)
 
 scheduler = BackgroundScheduler({'apscheduler.timezone':'America/Los_Angeles'})
-scheduler.add_job(job_function, 'interval', minutes=5)
+scheduler.add_job('job_function', 'interval', minutes=5)
 scheduler.start()
 
 def job_function():
