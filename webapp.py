@@ -8,16 +8,14 @@ import time
 app = Flask(__name__)
 
 def job_function():
-    #return print("Hello World!")
-    paragraph += Markup("<p>Hello World!</p>")
-    return paragraph
+    return print("Hello World!")
 
 @app.route('/')
 def welcome():
     scheduler = BackgroundScheduler({'apscheduler.timezone':'America/Los_Angeles'})
     scheduler.add_job(job_function, 'interval', seconds=5)
     scheduler.start()
-    return render_template('home.html', paragraph=job_function())
+    return render_template('home.html')
   
 if __name__=="__main__":
     app.run(debug=False)
